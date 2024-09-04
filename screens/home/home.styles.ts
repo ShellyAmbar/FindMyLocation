@@ -6,7 +6,6 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
     backgroundColor: GlobalColors.BgColors.Bg1,
-
     zIndex: 0,
   },
   buttons: {

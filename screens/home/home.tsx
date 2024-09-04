@@ -39,7 +39,7 @@ const Home = () => {
   return (
     <SafeAreaView style={styles.container}>
       <LinearGradient
-        colors={['#192f6a', '#4c669f', 'transparent']}
+        colors={['#192f6a', '#192f6a', 'transparent']}
         style={styles.buttons}>
         <AutoCompleteGeoLocation
           textInputProps={{cursorColor: '#FFF'}}

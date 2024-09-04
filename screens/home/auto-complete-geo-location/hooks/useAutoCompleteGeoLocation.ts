@@ -2,6 +2,7 @@ import {useCallback, useEffect, useState} from 'react';
 import axios from 'axios';
 import useDebounce from './useDebounce';
 import UsePlaceAutocompleteProps from './interfaces';
+import {Keyboard} from 'react-native';
 
 const useAutoCompleteGeoLocation = ({
   quaryData,
@@ -46,6 +47,7 @@ const useAutoCompleteGeoLocation = ({
 
       setSuggestions([]);
       onPlaceSelected(placeId, description);
+      Keyboard.dismiss();
     },
     [setQuery, setSuggestions, onPlaceSelected],
   );
