@@ -32,15 +32,11 @@ npm run android
 yarn android
 ```
 
-### For iOS
+## Modifications for GOOGLE API KEY:
 
-```bash
-# using npm
-npm run ios
+# create .env file with -> GOOGLE_API_KEY key with the value of your google maps key.
 
-# OR using Yarn
-yarn ios
-```
+# create in android/values/strings.xm a new key -> google_maps_api_key with the value of your google maps key.
 
 If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
 
