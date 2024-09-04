@@ -26,11 +26,6 @@ const useAutoCompleteGeoLocation = ({
 
       try {
         const response = await axios.get(url);
-        console.log(
-          'response.data.predictions',
-          url,
-          response.data.predictions,
-        );
 
         if (response.data.predictions) {
           setSuggestions(response.data.predictions);

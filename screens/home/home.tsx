@@ -1,6 +1,6 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import MapView, {Marker} from 'react-native-maps';
-import {SafeAreaView, View} from 'react-native';
+import {SafeAreaView} from 'react-native';
 import styles from './home.styles';
 import {fetchGeoLocation} from '../../api/location';
 import {useDispatch} from 'react-redux';
@@ -8,6 +8,7 @@ import {updateRegion} from '../../store/reducers/location/location';
 import AutoCompleteGeoLocation from './auto-complete-geo-location/auto-complete-geo-location';
 import LinearGradient from 'react-native-linear-gradient';
 import Spacer from '../../components/spacer/spacer';
+import {YOUR_GOOGLE_API_KEY} from '@env';
 const Home = () => {
   const [region, setRegion] = useState({
     latitude: 37.78825,
@@ -19,13 +20,12 @@ const Home = () => {
   const [country, setCountry] = useState('');
   const [city, setCity] = useState('');
   const dispatch = useDispatch();
-  const API_KEY = 'AIzaSyDQ4MUmVCLVJs91-TX-ODex864VLOcXfo4';
 
   const getRegion = useCallback(async () => {
     const regionRes = await fetchGeoLocation({
       selectedCity: city,
       selectedCountry: country,
-      apiKey: API_KEY,
+      apiKey: YOUR_GOOGLE_API_KEY,
     });
     setRegion(regionRes);
     dispatch(updateRegion(regionRes));
@@ -46,7 +46,7 @@ const Home = () => {
           inputStyle={styles.input}
           placeholder={'Select a country'}
           quaryData={{
-            key: API_KEY,
+            key: YOUR_GOOGLE_API_KEY,
             types: 'country',
           }}
           onPlaceSelected={(placeId, description) => {
@@ -70,7 +70,7 @@ const Home = () => {
               setCity(description);
             }}
             quaryData={{
-              key: API_KEY,
+              key: YOUR_GOOGLE_API_KEY,
               types: 'city_hall',
             }}
           />
