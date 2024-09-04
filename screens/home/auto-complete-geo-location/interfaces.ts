@@ -1,7 +1,7 @@
 import {TextInputProps, TextStyle, ViewStyle} from 'react-native';
 
 interface PlaceAutocompleteProps {
-  quaryData: {key: string; types: string};
+  quaryData: {key: string; types: string[]};
   placeholder?: string;
   onPlaceSelected: (placeId: string, description: string) => void;
   debounceDelayInSeconds?: number;

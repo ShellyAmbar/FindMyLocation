@@ -47,7 +47,7 @@ const Home = () => {
           placeholder={'Select a country'}
           quaryData={{
             key: GOOGLE_API_KEY,
-            types: 'country',
+            types: ['country'],
           }}
           onPlaceSelected={(placeId, description) => {
             setCountry(description);
@@ -71,7 +71,7 @@ const Home = () => {
             }}
             quaryData={{
               key: GOOGLE_API_KEY,
-              types: 'city_hall',
+              types: ['city_hall'],
             }}
           />
         ) : null}

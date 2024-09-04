@@ -23,7 +23,8 @@ const useAutoCompleteGeoLocation = ({
         return;
       }
 
-      const url = `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${input}&key=${quaryData.key}&types=${quaryData.types}`;
+      const typesArray = quaryData.types.join().replace(/,/g, '|');
+      const url = `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${input}&key=${quaryData.key}&types=${typesArray}`;
 
       try {
         const response = await axios.get(url);
