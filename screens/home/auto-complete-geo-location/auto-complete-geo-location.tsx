@@ -19,6 +19,7 @@ const AutoCompleteGeoLocation = ({
   resultListStyle,
   textInputProps = {},
   onTextChanged,
+  country,
 }: PlaceAutocompleteProps) => {
   const {handleSelect, suggestions, query, setQuery, setisHandleSearchEnabled} =
     useAutoCompleteGeoLocation({
@@ -26,6 +27,7 @@ const AutoCompleteGeoLocation = ({
       onPlaceSelected,
       debounceDelayInSeconds,
       onTextChanged,
+      country,
     });
   return (
     <View style={[styles.container, {...containerStyle}]}>

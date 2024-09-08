@@ -8,6 +8,7 @@ const useAutoCompleteGeoLocation = ({
   onPlaceSelected,
   debounceDelayInSeconds = 1,
   onTextChanged,
+  country,
 }: UsePlaceAutocompleteProps) => {
   const [query, setQuery] = useState('');
   const [isHandleSearchEnabled, setisHandleSearchEnabled] = useState(true);
@@ -23,7 +24,9 @@ const useAutoCompleteGeoLocation = ({
       }
 
       const typesArray = quaryData.types.join().replace(/,/g, '|');
-      const url = `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${input}&key=${quaryData.key}&types=${typesArray}`;
+      const url = `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${
+        country ? country + ',' + input : input
+      }&key=${quaryData.key}&types=${typesArray}`;
 
       try {
         const response = await fetch(url);

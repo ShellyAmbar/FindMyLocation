@@ -13,5 +13,6 @@ interface PlaceAutocompleteProps {
   resultListStyle?: ViewStyle;
   textInputProps?: TextInputProps;
   onTextChanged?: (text: string) => void;
+  country?: string;
 }
 export default PlaceAutocompleteProps;

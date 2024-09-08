@@ -73,6 +73,7 @@ const Home = () => {
               key: GOOGLE_API_KEY,
               types: ['city_hall'],
             }}
+            country={country}
           />
         ) : null}
       </LinearGradient>
